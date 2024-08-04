@@ -9,13 +9,13 @@ body {
   min-height: 100vh;
   font-family: "Barlow Semi Condensed";
   font-size: 13px;
+  background-color: hsl(210, 46%, 95%);
 }
 
 main {
   padding: 70px 24px;
   display: grid;
   gap: 24px;
-  background-color: hsl(210, 46%, 95%);
 }
 
 .box {
@@ -24,8 +24,6 @@ main {
   box-sizing: border-box;
   box-shadow: 0 10px 20px -8px hsl(0, 0%, 81%);
   animation: scale-up 1500ms forwards linear normal;
-  max-width: 530px;
-  margin-inline: auto;
 }
 .box img {
   width: 35px;
@@ -135,6 +133,19 @@ main {
     opacity: 1;
   }
 }
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-block: 15px;
+  font-size: 13px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+  color: hsl(217, 19%, 35%);
+}
+
 @media (width > 45em) {
   main {
     display: grid;
