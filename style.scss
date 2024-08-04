@@ -1,0 +1,207 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+$moderate-violet: hsl(263, 55%, 52%);
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$very-dark-grayish-blue-50: hsla(217, 19%, 35%, 0.5);
+$very-dark-grayish-blue-70: hsla(217, 19%, 35%, 0.7);
+$very-dark-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$light-gray: hsl(0, 0%, 81%);
+$light-gray-50: hsla(0, 0%, 81%, 0.5);
+$light-gray-70: hsla(0, 0%, 81%, 0.7);
+$light-grayish-blue: hsl(210, 46%, 95%);
+$f-size: 13px;
+$weight-500: 500;
+$weight-600: 600;
+
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Barlow Semi Condensed';
+    font-size: $f-size;
+}
+
+//MAIN CONTAINER
+
+main {
+    padding: 70px 24px;
+    display: grid;
+    gap: 24px;
+    background-color: $light-grayish-blue;
+}
+
+//All boxes
+.box {
+    border-radius: 5px;
+    padding: 22px 30px 28px 28px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px -8px $light-gray;
+    animation: scale-up 1500ms forwards linear normal;
+    max-width: 530px;
+    margin-inline: auto;
+
+    img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+        justify-content: flex-start;
+        align-items: center;
+
+        .prof-inner {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+// Font styles for Daniel, Jonathan & Patrick
+@mixin fonts ($size, $color, $weight, $align){
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    text-align: $align;
+}
+
+#daniel, #jonathan, #patrick {
+    
+
+    h1 {
+        @include fonts(1em, $light-gray, $weight-600, left);
+
+    }
+
+    h2 {
+        @include fonts(1em, $light-gray-50, $weight-500, left);
+        
+    }
+
+    h3 {
+        @include fonts(1.5em, $light-gray, $weight-600, left);
+        padding-top: 18px;
+        padding-bottom: 18px;
+        line-height: 1.5;
+    }
+
+    p {
+        @include fonts(1em, $light-gray-70, $weight-500, left);
+        line-height: 1.5;
+    }
+}
+
+// Font Styles for Jeannette and Kira
+
+#jeanette, #kira {
+    h1 {
+        @include fonts(1em, $very-dark-grayish-blue, $weight-600, left);
+
+    }
+
+    h2 {
+        @include fonts(1em, $very-dark-grayish-blue-50, $weight-500, left);
+        
+    }
+
+    h3 {
+        @include fonts(1.5em, $very-dark-grayish-blue, $weight-600, left);
+        padding-top: 18px;
+        padding-bottom: 18px;
+        line-height: 1.5;
+    }
+
+    p {
+        @include fonts(1em, $very-dark-grayish-blue-70, $weight-500, left);
+        line-height: 1.5;
+    }
+}
+
+//INDIVIDUAL BOXES
+#daniel{
+    background-color: $moderate-violet;
+    background-image: url(./images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position-x: right 28px;
+}
+#jonathan {
+    background-color: $very-dark-grayish-blue;
+}
+
+#jeanette {
+    background-color: $white;
+}
+
+#patrick {
+    background-color: $very-dark-blackish-blue;
+}
+
+#kira {
+    background-color: $white;
+}
+
+// KEYFRAMES
+@keyframes scale-up {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+  }
+
+// MEDIA QUERY - 45EM (720PX)
+@media (width > 45em) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+// MEDIA QUERY- 69EM (1104PX) 
+@media (width > 69em) {
+    .grid-col-span-2 {
+        grid-column: span 2;
+    }
+    main {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+        "a a b e"
+        "c d d e";
+
+        #daniel{
+            grid-area: a;
+        }
+        #jonathan {
+            grid-area: b;
+        }
+        
+        #jeanette {
+            grid-area: c;
+        }
+        
+        #patrick {
+            grid-area: d;
+        }
+        
+        #kira {
+            grid-area: e;
+        }
+    }
+}

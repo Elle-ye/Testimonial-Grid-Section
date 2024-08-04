@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed";
+  font-size: 13px;
+}
+
+main {
+  padding: 70px 24px;
+  display: grid;
+  gap: 24px;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.box {
+  border-radius: 5px;
+  padding: 22px 30px 28px 28px;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px -8px hsl(0, 0%, 81%);
+  animation: scale-up 1500ms forwards linear normal;
+  max-width: 530px;
+  margin-inline: auto;
+}
+.box img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.box .profile {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.box .profile .prof-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+#daniel h1, #jonathan h1, #patrick h1 {
+  font-size: 1em;
+  color: hsl(0, 0%, 81%);
+  font-weight: 600;
+  text-align: left;
+}
+#daniel h2, #jonathan h2, #patrick h2 {
+  font-size: 1em;
+  color: hsla(0, 0%, 81%, 0.5);
+  font-weight: 500;
+  text-align: left;
+}
+#daniel h3, #jonathan h3, #patrick h3 {
+  font-size: 1.5em;
+  color: hsl(0, 0%, 81%);
+  font-weight: 600;
+  text-align: left;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  line-height: 1.5;
+}
+#daniel p, #jonathan p, #patrick p {
+  font-size: 1em;
+  color: hsla(0, 0%, 81%, 0.7);
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#jeanette h1, #kira h1 {
+  font-size: 1em;
+  color: hsl(217, 19%, 35%);
+  font-weight: 600;
+  text-align: left;
+}
+#jeanette h2, #kira h2 {
+  font-size: 1em;
+  color: hsla(217, 19%, 35%, 0.5);
+  font-weight: 500;
+  text-align: left;
+}
+#jeanette h3, #kira h3 {
+  font-size: 1.5em;
+  color: hsl(217, 19%, 35%);
+  font-weight: 600;
+  text-align: left;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  line-height: 1.5;
+}
+#jeanette p, #kira p {
+  font-size: 1em;
+  color: hsla(217, 19%, 35%, 0.7);
+  font-weight: 500;
+  text-align: left;
+  line-height: 1.5;
+}
+
+#daniel {
+  background-color: hsl(263, 55%, 52%);
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position-x: right 28px;
+}
+
+#jonathan {
+  background-color: hsl(217, 19%, 35%);
+}
+
+#jeanette {
+  background-color: hsl(0, 0%, 100%);
+}
+
+#patrick {
+  background-color: hsl(219, 29%, 14%);
+}
+
+#kira {
+  background-color: hsl(0, 0%, 100%);
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@media (width > 45em) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width > 69em) {
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+  main {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "a a b e" "c d d e";
+  }
+  main #daniel {
+    grid-area: a;
+  }
+  main #jonathan {
+    grid-area: b;
+  }
+  main #jeanette {
+    grid-area: c;
+  }
+  main #patrick {
+    grid-area: d;
+  }
+  main #kira {
+    grid-area: e;
+  }
+}
